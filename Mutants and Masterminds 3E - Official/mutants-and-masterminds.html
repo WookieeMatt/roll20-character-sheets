@@ -92,16 +92,73 @@
 
 
 <!-- ------------------------------------- -->
-<!--       Page 1 (Stats & Skills)         -->
+<!--       Page 2 (Stats & Skills)         -->
 <!-- ------------------------------------- -->
 <div class="sheet-tab-content sheet-tab2">
-    <div class="sheet-2colrow">
-    </div>
-            
+    <div class="skill-options">
+        <div class="section-abilities">
+            <div class="details-row">
+                <label>Name</label>
+                <label>Total</label>
+                <label>Base</label>
+                <label>Misc</label>
+            </div>
+            <div class="details-row">
+                <button type="roll" name="roll_strength-roll" title="%{strength-roll}" value="@{who-stat} Strength Result: [[@{die_type}+(@{strength-total})]]">Strength</button>
+                <input type="number" name="attr_strength-total" title="strength-total" value="(@{strength} + @{strength-misc})" disabled/>
+                <input type="number" name="attr_strength" title="strength" value="0"/>
+                <input type="number" name="attr_strength-misc" title="strength-misc" value="0"/>
+            </div>
+            <div class="details-row">
+                <button type="roll" name="roll_agility-roll" title="%{agility-roll}" value="@{who-stat} Agility Result: [[@{die_type}+(@{agility-total})]]">Agility</button>
+                <input type="number" name="attr_agility-total" title="agility-total" value="(@{agility} + @{agility-misc})" disabled/>
+                <input type="number" name="attr_agility" title="agility" value="0"/>
+                <input type="number" name="attr_agility-misc" title="agility-misc" value="0"/>
+            </div>
+            <div class="details-row">
+                <button type="roll" name="roll_fighting-roll" title="%{fighting-roll}" value="@{who-stat} Fighting Result: [[@{die_type}+(@{fighting-total})]]">Fighting</button>
+                <input type="number" name="attr_fighting-total" title="fighting-total" value="(@{fighting} + @{fighting-misc})" disabled/>
+                <input type="number" name="attr_fighting" title="fighting" value="0"/>
+                <input type="number" name="attr_fighting-misc" title="fighting-misc" value="0"/>
+            </div>
+            <div class="detailse-row">
+                <button type="roll" name="roll_awareness-roll" title="%{awareness-roll}" value="@{who-stat} Awareness Result: [[@{die_type}+(@{awareness-total})]]">Awareness</button>
+                <input type="number" name="attr_awareness-total" title="awareness-total" value="(@{awareness} + @{awareness-misc})" disabled/>
+                <input type="number" name="attr_awareness" title="awareness" value="0"/>
+                <input type="number" name="attr_awareness-misc" title="awareness-misc" value="0"/>
+            </div>
+            <div class="details-row">
+                <button type="roll" name="roll_stamina-roll" title="%{stamina-roll}" value="@{who-stat} Stamina Result: [[@{die_type}+(@{stamina-total})]]">Stamina</button>
+                <input type="number" name="attr_stamina-total" title="stamina-total" value="(@{stamina} + @{stamina-misc})" disabled/>
+                <input type="number" name="attr_stamina" title="stamina" value="0"/>
+                <input type="number" name="attr_stamina-misc" title="stamina-misc" value="0"/>
+            </div>
+            <div class="details-row">
+                <button type="roll" name="roll_dexterity-roll" title="%{dexterity-roll}" value="@{who-stat} Dexterity Result: [[@{die_type}+(@{dexterity-total})]]">Dexterity</button>
+                <input type="number" name="attr_dexterity-total" title="dexterity-total" value="(@{dexterity} + @{dexterity-misc})" disabled/>
+                <input type="number" name="attr_dexterity" title="dexterity" value="0"/>
+                <input type="number" name="attr_dexterity-misc" title="dexterity-misc" value="0"/>
+            </div>
+            <div class="details-row">
+                <button type="roll" name="roll_intellect-roll" title="%{intellect-roll}" value="@{who-stat} Intellect Result: [[@{die_type}+(@{intellect-total})]]">Intellect</button>
+                <input type="number" name="attr_intellect-total" title="intellect-total" value="(@{intellect} + @{intellect-misc})" disabled/>
+                <input type="number" name="attr_intellect" title="intellect" value="0"/>
+                <input type="number" name="attr_intellect-misc" title="intellect-misc" value="0"/>
+            </div>
+            <div class="details-row">
+                <button type="roll" name="roll_presence-roll" title="%{presence-roll}" value="@{who-stat} Presence Result: [[@{die_type}+(@{presence-total})]]">Presence</button>
+                <input type="number" name="attr_presence-total" title="presence-total" value="(@{presence} + @{presence-misc})" disabled/>
+                <input type="number" name="attr_presence" title="presence" value="0"/>
+                <input type="number" name="attr_presence-misc" title="presence-misc" value="0"/>
+            </div>
+            <input type="hidden" name="attr_total-ability-score" value="(@{strength} + @{agility} + @{fighting} + @{awareness} + @{stamina} + @{dexterity} + @{intellect} + @{presence})" disabled/>
+        </div>
+        <br />
+    </div>       
 </div>
 
 <!-- ---------------------------------- -->
-<!-- Page 2 (Powers, Advantages & Gear) -->
+<!-- Page 3 (Powers, Advantages & Gear) -->
 <!-- ---------------------------------- -->
 <div class="sheet-tab-content sheet-tab3">
     <input type="hidden" name="attr_subtab" class="tab" value="all"/>
@@ -114,7 +171,7 @@
 </div>
 
 <!-- --------------------------------- -->
-<!--         Page 3 (Options)          -->
+<!--         Page 4 (Options)          -->
 <!-- --------------------------------- -->
 <div class="sheet-tab-content sheet-tab4">
 	
