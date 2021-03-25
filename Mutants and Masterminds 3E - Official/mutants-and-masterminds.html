@@ -13,8 +13,6 @@
 		<div class="character">
 			<input type="text" name="attr_identity-name" title="identity-name" placeholder="Real Identity"/>
 			<input type="text" name="attr_character_name" title="real-name" placeholder="Super Alias"/>
-			
-			
 		</div>
 		<div class="details1">
 			<b> Secret</b><input type="radio" name="attr_identity-status" title="identity-status" value="0"/>
@@ -25,10 +23,6 @@
 			<b>Age:</b><input type="number" name="attr_age" title="age" value="0"/>
 			<b>Eyes:</b><input type="text" name="attr_eyes" title="eyes"/>
 			<b>Hair:</b><input type="text" name="attr_hair" title="hair"/>
-
-			
-			
-
 		</div>
 		<div class="details2">
 			<div>
@@ -96,7 +90,7 @@
 <!-- ------------------------------------- -->
 <div class="sheet-tab-content sheet-tab2">
     <div class="skill-options">
-        <div class="section-abilities">
+        <span class="section-abilities">
             <div class="details-row">
                 <label>Name</label>
                 <label>Total</label>
@@ -152,9 +146,222 @@
                 <input type="number" name="attr_presence-misc" title="presence-misc" value="0"/>
             </div>
             <input type="hidden" name="attr_total-ability-score" value="(@{strength} + @{agility} + @{fighting} + @{awareness} + @{stamina} + @{dexterity} + @{intellect} + @{presence})" disabled/>
-        </div>
+        
         <br />
-    </div>       
+    </div>  
+    <!-- Skills -->
+    <div class="sheet-section-skills">
+        <div class="details-row">
+            <label>Name</label>
+            <label>Ability</label>
+            <label>Total</label>
+            <label>Ability</label>
+            <label>Ranks</label>
+            <label>Other</label>
+        </div>
+        <div class="details-row">
+            <button type="roll" name="roll_Acrobatics-Check" title="Acrobatics-Check" value="@{who-skill} Acrobatics check: [[@{die_type} + @{Acrobatics}]]">Acrobatics</button>
+            <b><label>AGI</label></b>
+            <input type="number" name="attr_Acrobatics" title="Acrobatics" value="(@{Acrobatics-ability} + @{Acrobatics-ranks} + @{Acrobatics-other})" disabled/>
+            <input type="number" name="attr_Acrobatics-ability" title="Acrobatics-ability" value="@{agility-total}" disabled/>
+            <input type="number" name="attr_Acrobatics-ranks" title="Acrobatics-ranks" value="0"/>
+            <input type="number" name="attr_Acrobatics-other" title="Acrobatics-other" value="0"/>
+        </div>
+        <div class="details-row">
+            <button type="roll" name="roll_Athletics-Check" title="Athletics-Check" value="@{who-skill} Athletics check: [[@{die_type} + @{Athletics}]]">Athletics</button>
+            <b><label>STR</label></b>
+            <input type="number" name="attr_Athletics" title="Athletics" value="(@{Athletics-ability} + @{Athletics-ranks} + @{Athletics-other})" disabled/>
+            <input type="number" name="attr_Athletics-ability" title="Athletics-ability" value="@{strength-total}" disabled/>
+            <input type="number" name="attr_Athletics-ranks" title="Athletics-ranks" value="0"/>
+            <input type="number" name="attr_Athletics-other" title="Athletics-other" value="0"/>
+        </div>
+        <div class="details-row close-combat-header">
+            <label>Close Combat</label>
+            <b><label>FGT</label></b>
+        </div>
+        <div class="details-row close-combat">
+            <button class="die-show" type="roll" name="roll_Close-Combat-1-Check" title="Close-Combat-1-Check" value="@{who-skill} @{Close-Combat-1-name} check: [[@{die_type} + @{Close-Combat-1}]]"></button>
+            <input type="text" name="attr_Close-Combat-1-name" title="Close-Combat-1-name"/>
+            <input type="number" name="attr_Close-Combat-1" title="Close-Combat-1" value="(@{Close-Combat-1-ability} + @{Close-Combat-1-ranks} + @{Close-Combat-1-other})" disabled/>
+            <input type="number" name="attr_Close-Combat-1-ability" title="Close-Combat-1-ability" value="@{fighting-total}" disabled/>
+            <input type="number" name="attr_Close-Combat-1-ranks" title="Close-Combat-1-ranks" value="0"/>
+            <input type="number" name="attr_Close-Combat-1-other" title="Close-Combat-1-other" value="0"/>
+        </div>
+        <div class="details-row close-combat">
+            <button class="die-show" type="roll" name="roll_Close-Combat-2-Check" title="Close-Combat-2-Check" value="@{who-skill} @{Close-Combat-2-name} check: [[@{die_type} + @{Close-Combat-2}]]"></button>
+            <input type="text" name="attr_Close-Combat-2-name" title="Close-Combat-2-name"/>
+            <input type="number" name="attr_Close-Combat-2" title="Close-Combat-2" value="(@{Close-Combat-2-ability} + @{Close-Combat-2-ranks} + @{Close-Combat-2-other})" disabled/>
+            <input type="number" name="attr_Close-Combat-2-ability" title="Close-Combat-2-ability" value="@{fighting-total}" disabled/>
+            <input type="number" name="attr_Close-Combat-2-ranks" title="Close-Combat-2-ranks" value="0"/>
+            <input type="number" name="attr_Close-Combat-2-other" title="Close-Combat-2-other" value="0"/>
+        </div>
+        <div class="details-row close-combat" style="margin-bottom: 5px;">
+            <button class="die-show" type="roll" name="roll_Close-Combat-3-Check" title="Close-Combat-3-Check" value="@{who-skill} @{Close-Combat-3-name} check: [[@{die_type} + @{Close-Combat-3}]]"></button>
+            <input type="text" name="attr_Close-Combat-3-name" title="Close-Combat-3-name"/>
+            <input type="number" name="attr_Close-Combat-3" title="Close-Combat-3" value="(@{Close-Combat-3-ability} + @{Close-Combat-3-ranks} + @{Close-Combat-3-other})" disabled/>
+            <input type="number" name="attr_Close-Combat-3-ability" title="Close-Combat-3-ability" value="@{fighting-total}" disabled/>
+            <input type="number" name="attr_Close-Combat-3-ranks" title="Close-Combat-3-ranks" value="0"/>
+            <input type="number" name="attr_Close-Combat-3-other" title="Close-Combat-3-other" value="0"/>
+        </div>
+        <div class="details-row">
+            <button type="roll" name="roll_Deception-Check" title="Deception-Check" value="@{who-skill} Deception check: [[@{die_type} + @{Deception}]]">Deception</button>
+            <b><label>PRS</label></b>
+            <input type="number" name="attr_Deception" title="Deception" value="(@{Deception-ability} + @{Deception-ranks} + @{Deception-other})" disabled/>
+            <input type="number" name="attr_Deception-ability" title="Deception-ability" value="@{presence-total}" disabled/>
+            <input type="number" name="attr_Deception-ranks" title="Deception-ranks" value="0"/>
+            <input type="number" name="attr_Deception-other" title="Deception-other" value="0"/>
+        </div>
+        <div class="details-row expertise-header">
+            <label>Expertise</label>
+            <b><label>INT</label></b>
+        </div>
+        <div class="details-row expertise">
+            <button class="die-show" type="roll" name="roll_Expertise-1-Check" title="Expertise-1-Check" value="@{who-skill} @{Expertise-1-name} check: [[@{die_type} + @{Expertise-1}]]"></button>
+            <input type="text" name="attr_Expertise-1-name" title="Expertise-1-name"/>
+            <input type="number" name="attr_Expertise-1" title="Expertise-1" value="(@{Expertise-1-ability} + @{Expertise-1-ranks} + @{Expertise-1-other})" disabled/>
+            <input type="number" name="attr_Expertise-1-ability" title="Expertise-1-ability" value="@{intellect-total}" disabled/>
+            <input type="number" name="attr_Expertise-1-ranks" title="Expertise-1-ranks" value="0"/>
+            <input type="number" name="attr_Expertise-1-other" title="Expertise-1-other" value="0"/>
+        </div>
+        <div class="details-row expertise">
+            <button class="die-show" type="roll" name="roll_Expertise-2-Check" title="Expertise-2-Check" value="@{who-skill} @{Expertise-2-name} check: [[@{die_type} + @{Expertise-2}]]"></button>
+            <input type="text" name="attr_Expertise-2-name" title="Expertise-2-name"/>
+            <input type="number" name="attr_Expertise-2" title="Expertise-2" value="(@{Expertise-2-ability} + @{Expertise-2-ranks} + @{Expertise-2-other})" disabled/>
+            <input type="number" name="attr_Expertise-2-ability" title="Expertise-2-ability" value="@{intellect-total}" disabled/>
+            <input type="number" name="attr_Expertise-2-ranks" title="Expertise-2-ranks" value="0"/>
+            <input type="number" name="attr_Expertise-2-other" title="Expertise-2-other" value="0"/>
+        </div>
+        <div class="details-row expertise">
+            <button class="die-show" type="roll" name="roll_Expertise-3-Check" title="Expertise-3-Check" value="@{who-skill} @{Expertise-3-name} check: [[@{die_type} + @{Expertise-3}]]"></button>
+            <input type="text" name="attr_Expertise-3-name" title="Expertise-3-name"/>
+            <input type="number" name="attr_Expertise-3" title="Expertise-3" value="(@{Expertise-3-ability} + @{Expertise-3-ranks} + @{Expertise-3-other})" disabled/>
+            <input type="number" name="attr_Expertise-3-ability" title="Expertise-3-ability" value="@{intellect-total}" disabled/>
+            <input type="number" name="attr_Expertise-3-ranks" title="Expertise-3-ranks" value="0"/>
+            <input type="number" name="attr_Expertise-3-other" title="Expertise-3-other" value="0"/>
+        </div>
+        <div class="details-row expertise" style="margin-bottom: 5px;">
+            <button class="die-show" type="roll" name="roll_Expertise-4-Check" title="Expertise-4-Check" value="@{who-skill} @{Expertise-4-name} check: [[@{die_type} + @{Expertise-4}]]"></button>
+            <input type="text" name="attr_Expertise-4-name" title="Expertise-4-name"/>
+            <input type="number" name="attr_Expertise-4" title="Expertise-4" value="(@{Expertise-4-ability} + @{Expertise-4-ranks} + @{Expertise-4-other})" disabled/>
+            <input type="number" name="attr_Expertise-4-ability" title="Expertise-4-ability" value="@{intellect-total}" disabled/>
+            <input type="number" name="attr_Expertise-4-ranks" title="Expertise-4-ranks" value="0"/>
+            <input type="number" name="attr_Expertise-4-other" title="Expertise-4-other" value="0"/>
+        </div>
+        <div class="details-row">
+            <button type="roll" name="roll_Insight-Check" title="Insight-Check" value="@{who-skill} Insight check: [[@{die_type} + @{Insight}]]">Insight</button>
+            <b><label>AWE</label></b>
+            <input type="number" name="attr_Insight" title="Insight" value="(@{Insight-ability} + @{Insight-ranks} + @{Insight-other})" disabled/>
+            <input type="number" name="attr_Insight-ability" title="Insight-ability" value="@{awareness-total}" disabled/>
+            <input type="number" name="attr_Insight-ranks" title="Insight-ranks" value="0"/>
+            <input type="number" name="attr_Insight-other" title="Insight-other" value="0"/>
+        </div>
+        <div class="details-row">
+            <button type="roll" name="roll_Intimidation-Check" title="Intimidation-Check" value="@{who-skill} Intimidation check: [[@{die_type} + @{Intimidation}]]">Intimidation</button>
+            <b><label>PRS</label></b>
+            <input type="number" name="attr_Intimidation" title="Intimidation" value="(@{Intimidation-ability} + @{Intimidation-ranks} + @{Intimidation-other})" disabled/>
+            <input type="number" name="attr_Intimidation-ability" title="Intimidation-ability" value="@{presence-total}" disabled/>
+            <input type="number" name="attr_Intimidation-ranks" title="Intimidation-ranks" value="0"/>
+            <input type="number" name="attr_Intimidation-other" title="Intimidation-other" value="0"/>
+        </div>
+        <div class="details-row">
+            <button type="roll" name="roll_Investigation-Check" title="Investigation-Check" value="@{who-skill} Investigation check: [[@{die_type} + @{Investigation}]]">Investigation</button>
+            <b><label>INT</label></b>
+            <input type="number" name="attr_Investigation" title="Investigation" value="(@{Investigation-ability} + @{Investigation-ranks} + @{Investigation-other})" disabled/>
+            <input type="number" name="attr_Investigation-ability" title="Investigation-ability" value="@{intellect-total}" disabled/>
+            <input type="number" name="attr_Investigation-ranks" title="Investigation-ranks" value="0"/>
+            <input type="number" name="attr_Investigation-other" title="Investigation-other" value="0"/>
+        </div>
+        <div class="details-row">
+            <button type="roll" name="roll_Perception-Check" title="Perception-Check" value="@{who-skill} Perception check: [[@{die_type} + @{Perception}]]">Perception</button>
+            <b><label>AWE</label></b>
+            <input type="number" name="attr_Perception" title="Perception" value="(@{Perception-ability} + @{Perception-ranks} + @{Perception-other})" disabled/>
+            <input type="number" name="attr_Perception-ability" title="Perception-ability" value="@{awareness-total}" disabled/>
+            <input type="number" name="attr_Perception-ranks" title="Perception-ranks" value="0"/>
+            <input type="number" name="attr_Perception-other" title="Perception-other" value="0"/>
+        </div>
+        <div class="details-row">
+            <button type="roll" name="roll_Persuasion-Check" title="Persuasion-Check" value="@{who-skill} Persuasion check: [[@{die_type} + @{Persuasion}]]">Persuasion</button>
+            <b><label>PRS</label></b>
+            <input type="number" name="attr_Persuasion" title="Persuasion" value="(@{Persuasion-ability} + @{Persuasion-ranks} + @{Persuasion-other})" disabled/>
+            <input type="number" name="attr_Persuasion-ability" title="Persuasion-ability" value="@{presence-total}" disabled/>
+            <input type="number" name="attr_Persuasion-ranks" title="Persuasion-ranks" value="0"/>
+            <input type="number" name="attr_Persuasion-other" title="Persuasion-other" value="0"/>
+        </div>
+        <div class="details-row range-header">
+            <b><label>Ranged Combat</label></b>
+            <b><label>DEX</label></b>
+        </div>
+        <div class="details-row range">
+            <button class="die-show" type="roll" name="roll_Ranged-Combat-1-Check" title="Ranged-Combat-1-Check" value="@{who-skill} @{Ranged-Combat-1-name} check: [[@{die_type} + @{Ranged-Combat-1}]]"></button>
+            <input type="text" name="attr_Ranged-Combat-1-name" title="Ranged-Combat-1-name"/>
+            <input type="number" name="attr_Ranged-Combat-1" title="Ranged-Combat-1" value="(@{Ranged-Combat-1-ability} + @{Ranged-Combat-1-ranks} + @{Ranged-Combat-1-other})" disabled/>
+            <input type="number" name="attr_Ranged-Combat-1-ability" title="Ranged-Combat-1-ability" value="@{dexterity-total}" disabled/>
+            <input type="number" name="attr_Ranged-Combat-1-ranks" title="Ranged-Combat-1-ranks" value="0"/>
+            <input type="number" name="attr_Ranged-Combat-1-other" title="Ranged-Combat-1-other" value="0"/>
+        </div>
+        <div class="details-row range">
+            <button  class="die-show" type="roll" name="roll_Ranged-Combat-2-Check" title="Ranged-Combat-2-Check" value="@{who-skill} @{Ranged-Combat-2-name} check: [[@{die_type} + @{Ranged-Combat-2}]]"></button>
+            <input type="text" name="attr_Ranged-Combat-2-name" title="Ranged-Combat-2-name"/>
+            <input type="number" name="attr_Ranged-Combat-2" title="Ranged-Combat-2" value="(@{Ranged-Combat-2-ability} + @{Ranged-Combat-2-ranks} + @{Ranged-Combat-2-other})" disabled/>
+            <input type="number" name="attr_Ranged-Combat-2-ability" title="Ranged-Combat-2-ability" value="@{dexterity-total}" disabled/>
+            <input type="number" name="attr_Ranged-Combat-2-ranks" title="Ranged-Combat-2-ranks" value="0"/>
+            <input type="number" name="attr_Ranged-Combat-2-other" title="Ranged-Combat-2-other" value="0"/>
+        </div>
+        <div class="details-row range" style="margin-bottom: 5px;">
+            <button class="die-show" type="roll" name="roll_Ranged-Combat-3-Check" title="Ranged-Combat-3-Check" value="@{who-skill} @{Ranged-Combat-3-name} check: [[@{die_type} + @{Ranged-Combat-3}]]"></button>
+            <input type="text" name="attr_Ranged-Combat-3-name" title="Ranged-Combat-3-name"/>
+            <input type="number" name="attr_Ranged-Combat-3" title="Ranged-Combat-3" value="(@{Ranged-Combat-3-ability} + @{Ranged-Combat-3-ranks} + @{Ranged-Combat-3-other})" disabled/>
+            <input type="number" name="attr_Ranged-Combat-3-ability" title="Ranged-Combat-3-ability" value="@{dexterity-total}" disabled/>
+            <input type="number" name="attr_Ranged-Combat-3-ranks" title="Ranged-Combat-3-ranks" value="0"/>
+            <input type="number" name="attr_Ranged-Combat-3-other" title="Ranged-Combat-3-other" value="0"/>
+        </div>
+        <div class="details-row">
+            <button type="roll" name="roll_Sleight-of-hand-Check" title="Sleight-of-hand-Check" value="@{who-skill} Sleight of Hand check: [[@{die_type} + @{Sleight-of-hand}]]">Sleight of Hand</button>
+            <b><label>DEX</label></b>
+            <input type="number" name="attr_Sleight-of-hand" title="Sleight-of-hand" value="(@{Sleight-of-hand-ability} + @{Sleight-of-hand-ranks} + @{Sleight-of-hand-other})" disabled/>
+            <input type="number" name="attr_Sleight-of-hand-ability" title="Sleight-of-hand-ability" value="@{dexterity-total}" disabled/>
+            <input type="number" name="attr_Sleight-of-hand-ranks" title="Sleight-of-hand-ranks" value="0"/>
+            <input type="number" name="attr_Sleight-of-hand-other" title="Sleight-of-hand-other" value="0"/>
+        </div>
+        <div class="details-row">
+            <button type="roll" name="roll_Stealth-Check" title="Stealth-Check" value="@{who-skill} Stealth check: [[@{die_type} + @{Stealth}]]">Stealth</button>
+            <b><label>AGI</label></b>
+            <input type="number" name="attr_Stealth" title="Stealth" value="(@{Stealth-ability} + @{Stealth-ranks} + @{Stealth-other})" disabled/>
+            <input type="number" name="attr_Stealth-ability" title="Stealth-ability" value="@{agility-total}" disabled/>
+            <input type="number" name="attr_Stealth-ranks" title="Stealth-ranks" value="0"/>
+            <input type="number" name="attr_Stealth-other" title="Stealth-other" value="0"/>
+        </div>
+        <div class="details-row">
+            <button type="roll" name="roll_Technology-Check" title="Technology-Check" value="@{who-skill} Technology check: [[@{die_type} + @{Technology}]]">Technology</button>
+            <b><label>INT</label></b>
+            <input type="number" name="attr_Technology" title="Technology" value="(@{Technology-ability} + @{Technology-ranks} + @{Technology-other})" disabled/>
+            <input type="number" name="attr_Technology-ability" title="Technology-ability" value="@{intellect-total}" disabled/>
+            <input type="number" name="attr_Technology-ranks" title="Technology-ranks" value="0"/>
+            <input type="number" name="attr_Technology-other" title="Technology-other" value="0"/>
+        </div>
+        <div class="details-row">
+            <button type="roll" name="roll_Treatment-Check" title="Treatment-Check" value="@{who-skill} Treatment check: [[@{die_type} + @{Treatment}]]">Treatment</button>
+            <b><label>INT</label></b>
+            <input type="number" name="attr_Treatment" title="Treatment" value="(@{Treatment-ability} + @{Treatment-ranks} + @{Treatment-other})" disabled/>
+            <input type="number" name="attr_Treatment-ability" title="Treatment-ability" value="@{intellect-total}" disabled/>
+            <input type="number" name="attr_Treatment-ranks" title="Treatment-ranks" value="0"/>
+            <input type="number" name="attr_Treatment-other" title="Treatment-other" value="0"/>
+        </div>
+        <div class="details-row">
+            <button type="roll" name="roll_Vehicles-Check" title="Vehicles-Check" value="@{who-skill} Vehicles check: [[@{die_type} + @{Vehicles}]]">Vehicles</button>
+            <b><label>DEX</label></b>
+            <input type="number" name="attr_Vehicles" title="Vehicles" value="(@{Vehicles-ability} + @{Vehicles-ranks} + @{Vehicles-other})" disabled/>
+            <input type="number" name="attr_Vehicles-ability" title="Vehicles-ability" value="@{dexterity-total}" disabled/>
+            <input type="number" name="attr_Vehicles-ranks" title="Vehicles-ranks" value="0"/>
+            <input type="number" name="attr_Vehicles-other" title="Vehicles-other" value="0"/>
+        </div>			
+        <div class="details-row total-row">
+            <b>Total Ranks</b>
+            <input type="number" name="attr_total-skill-ranks" title="total-skill-ranks" value="(@{Acrobatics-ranks} + @{Athletics-ranks} + @{Close-Combat-1-ranks}+ @{Close-Combat-2-ranks} + @{Close-Combat-3-ranks} + @{Deception-ranks} + @{Expertise-1-ranks} + @{Expertise-2-ranks} + @{Expertise-3-ranks} + @{Expertise-4-ranks} + @{Insight-ranks} + @{Intimidation-ranks} + @{Investigation-ranks} + @{Perception-ranks} + @{Persuasion-ranks} + @{Ranged-Combat-1-ranks} + @{Ranged-Combat-2-ranks} + @{Ranged-Combat-3-ranks} + @{Sleight-of-hand-ranks} + @{Stealth-ranks} + @{Technology-ranks} + @{Treatment-ranks} + @{Vehicles-ranks})" disabled/>
+        </div>
+    </div>
+    <br />
+        </span>     
 </div>
 
 <!-- ---------------------------------- -->

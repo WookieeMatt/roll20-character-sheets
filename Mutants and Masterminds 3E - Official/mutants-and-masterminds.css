@@ -10,11 +10,10 @@
     --col-purple: #7E627F;
     --font-normal: "Comic Neue", cursive; 
     --font-header: "Comic Neue", cursive;
-    /*--bg-halftone: url("https://i.imgur.com/gCUY6ka.png");
+    --bg-halftone: url("https://i.imgur.com/gCUY6ka.png");
     --bg-halftone-w: url("https://i.imgur.com/9nraS6y.png");
-    --bg-texture: url("https://i.imgur.com/IqY5rW0.jpg");*/
-    background-image: url("https://imgur.com/QsLHFY1");
-    /*background: var(--col-white);*/
+    --bg-texture: url("https://i.imgur.com/IqY5rW0.jpg");
+    background: var(--col-white);
     border-radius: 20px;
     padding: 15px 10px;
     color: var(--col-black);
@@ -269,7 +268,7 @@ img {
 label {
     font-family: "Comic Neue", cursive;
     display: inline-block;
-    font-size    : 0.8em;
+    font-size    : 1em;
     margin-bottom: 0px;
     padding-right: 0px;
     width: fit-content;
