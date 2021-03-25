@@ -58,8 +58,10 @@
 <input type="hidden" name="attr_tab" class="tab" value="stats"/>
 <button class="tab-button" type="action" name="act_details">Details</button>
 <button class="tab-button" type="action" name="act_stats">Stats & Skills</button>
-<button class="tab-button" type="action" name="act_powers">Powers, Advantages, & Equipment</button>
-<button class="tab-button" type="action" name="act_options">Options</button>
+<button class="tab-button" type="action" name="act_powers">Powers</button>
+<button class="tab-button" type="action" name="act_advantages">Advantages</button>
+<button class="tab-button" type="action" name="act_devices">Devices</button>
+<button class="tab-button" type="action" name="act_equipment">Equipment</button>
  
 <!-- ------------------------------------- -->
 <!--       Page 1 (BIO)                    -->
@@ -90,7 +92,7 @@
 <!-- ------------------------------------- -->
 <div class="sheet-tab-content sheet-tab2">
     <div class="skill-options">
-        <span class="section-abilities">
+        <div class="section-abilities">
             <div class="details-row">
                 <label>Name</label>
                 <label>Total</label>
@@ -146,11 +148,11 @@
                 <input type="number" name="attr_presence-misc" title="presence-misc" value="0"/>
             </div>
             <input type="hidden" name="attr_total-ability-score" value="(@{strength} + @{agility} + @{fighting} + @{awareness} + @{stamina} + @{dexterity} + @{intellect} + @{presence})" disabled/>
-        
+        </div>
         <br />
-    </div>  
+      
     <!-- Skills -->
-    <div class="sheet-section-skills">
+    <div class="section-skills">
         <div class="details-row">
             <label>Name</label>
             <label>Ability</label>
@@ -361,26 +363,34 @@
         </div>
     </div>
     <br />
-        </span>     
+    </div>   
 </div>
 
 <!-- ---------------------------------- -->
-<!-- Page 3 (Powers, Advantages & Gear) -->
+<!-- Page 3 (Powers) -->
 <!-- ---------------------------------- -->
 <div class="sheet-tab-content sheet-tab3">
-    <input type="hidden" name="attr_subtab" class="tab" value="all"/>
-    <button type="action" name="act_all">All</button>
-    <button type="action" name="act_devices">Powers & Devices</button>
-    <button type="action" name="act_advantages">Advantages</button>
-    <button type="action" name="act_equipment">Equipment</button>
-    
-    
+  
 </div>
 
 <!-- --------------------------------- -->
-<!--         Page 4 (Options)          -->
+<!--         Page 4 (Advantages)          -->
 <!-- --------------------------------- -->
 <div class="sheet-tab-content sheet-tab4">
+	
+</div>
+
+<!-- --------------------------------- -->
+<!--         Page 5 (Devices)          -->
+<!-- --------------------------------- -->
+<div class="sheet-tab-content sheet-tab5">
+	
+</div>
+
+<!-- --------------------------------- -->
+<!--         Page 6 (Equipment)          -->
+<!-- --------------------------------- -->
+<div class="sheet-tab-content sheet-tab6">
 	
 </div>
 
@@ -391,18 +401,11 @@
 
 <script type="text/worker">
 
-    ["details", "stats", "powers", "options"].forEach((button) => {
+    ["details", "stats", "powers", "advantages", "devices", "equipment"].forEach((button) => {
         on(`clicked:${button}`, (eventinfo) => {
             setAttrs({ tab: button });
         });
     });
-
-    ["devices", "advantages", "equipment", "all"].forEach((button) => {
-        on(`clicked:${button}`, (eventinfo) => {
-            setAttrs({ subtab: button });
-        });
-    });
-
 
     function clearLog() {
         setAttrs({"output-message": "", "hide-output": "1"}, {silent: true});
