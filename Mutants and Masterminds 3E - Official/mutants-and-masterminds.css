@@ -272,7 +272,7 @@ label {
 span.sheet-label {
     font-family: "Comic Neue", cursive;
     display: inline-block;
-    font-size    : 0.8em;
+    font-size    : 1em;
     margin-bottom: 0px;
     padding-right: 0px;
     width: fit-content;
