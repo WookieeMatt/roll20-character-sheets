@@ -540,7 +540,7 @@ div.sheet-section-defenses div.sheet-details-row{
     display:flex;
     justify-content: space-evenly;}
 
-div.sheet-section-defenses div.sheet-details-row:nth-child(1),{
+div.sheet-section-defenses div.sheet-details-row:nth-child(1){
     justify-content: center;}
 
 div.sheet-section-defenses div.sheet-details-row:nth-of-type(1) label {
@@ -839,7 +839,7 @@ div.sheet-macro b {
 
 div.sheet-section-advantages,
 div.sheet-section-equipment,
-div.sheet-section-options, {
+div.sheet-section-options {
     padding: 0.1% 1%;}
 
 div.sheet-section-advantages textarea,
